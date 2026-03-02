@@ -13,6 +13,8 @@
     --bg-gradient-3: #0f1510;                /* Dark Slate */
 }
 
+html { scroll-behavior: smooth; }
+
 body {
     font-family: 'Outfit', sans-serif; /* Keeping the clean font, or we could switch to Serif */
     margin: 0;

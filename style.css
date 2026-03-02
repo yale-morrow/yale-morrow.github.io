@@ -1,56 +1,63 @@
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    --text-color: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.7);
-    --accent: #00f2ff;
+    /* "British Castle" Palette */
+    --glass-bg: rgba(20, 25, 20, 0.7);       /* Dark smoked glass */
+    --glass-border: 1px solid rgba(255, 235, 205, 0.1); /* Subtle almond border */
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    
+    --text-color: #FFEBCD;                   /* Blanched Almond */
+    --text-muted: rgba(255, 235, 205, 0.6);
+    
+    --accent: #D4AF37;                       /* Antique Gold */
+    --bg-gradient-1: #0a0f0a;                /* Void Green/Black */
+    --bg-gradient-2: #1a2f1a;                /* Deep British Racing Green */
+    --bg-gradient-3: #0f1510;                /* Dark Slate */
 }
 
 body {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', sans-serif; /* Keeping the clean font, or we could switch to Serif */
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(135deg, var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3));
     color: var(--text-color);
     overflow-x: hidden;
 }
 
-/* Background Blobs */
+/* Background Blobs - Tamed down to "Fog/Shadows" */
 .blob {
     position: fixed;
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(100px);
     z-index: -1;
-    opacity: 0.6;
-    animation: float 20s infinite ease-in-out alternate;
+    opacity: 0.4;
+    animation: float 25s infinite ease-in-out alternate;
 }
 
 .blob-1 {
     top: -10%;
     left: -10%;
-    width: 500px;
-    height: 500px;
-    background: #ff00cc;
+    width: 600px;
+    height: 600px;
+    background: #0f3d0f; /* Deep Green */
 }
 
 .blob-2 {
     bottom: -10%;
     right: -10%;
-    width: 600px;
-    height: 600px;
-    background: #3333ff;
+    width: 700px;
+    height: 700px;
+    background: #000000; /* Pure Black shadow */
     animation-delay: -5s;
 }
 
 .blob-3 {
-    top: 40%;
-    left: 40%;
-    width: 300px;
-    height: 300px;
-    background: #00f2ff;
+    top: 30%;
+    left: 20%;
+    width: 400px;
+    height: 400px;
+    background: #2c3e2c; /* Lighter moss green */
     animation-delay: -10s;
+    opacity: 0.2;
 }
 
 @keyframes float {
@@ -74,10 +81,12 @@ header {
 header h1 {
     font-size: 4rem;
     margin: 0;
-    background: linear-gradient(to right, #fff, #b3b3b3);
+    /* Gold gradient text */
+    background: linear-gradient(to right, #FFEBCD, #D4AF37);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -2px;
+    font-family: 'Cinzel', serif; /* Optional: If you want a more "castle" font header */
 }
 
 .subtitle {
